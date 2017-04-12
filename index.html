@@ -27,13 +27,15 @@
 
 	<script>
 
-		var words = ["fun", "exciting", "about not giving up", "being helpful", "being open", "what I learned at CodingDojo\ !"],
+		var words = ["fun\u00A0", "exciting\u00A0", "about not giving up\u00A0", "being helpful\u00A0", "being open\u00A0", "what I learned at CodingDojo!\u00A0"],
 			el = document.getElementById('magic'),
 			word_counter = 0,
 			character_counter = 0;
 
+
 		function updateText()
 		{
+
 			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
 
 			if(character_counter > words[word_counter].length)
@@ -42,7 +44,7 @@
 				character_counter = 0;	//start over with the first character of the word
 				el.innerHTML = '';  //set the html to be blank
 
-				//if we're displaying the last word, go back to the first word
+						//if we're displaying the last word, go back to the first word
 				if(word_counter == words.length)
 					word_counter = 0;
 			}
